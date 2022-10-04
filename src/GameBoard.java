@@ -1,27 +1,28 @@
-import java.util.Random;
 import java.util.Scanner;
 
-public class GameBoard {            // main class
+public class GameBoard {    // main class
 
-    static Scanner input = new Scanner(System.in);      // Created a static scanner to be shared across all instances of the class
+    static Scanner input = new Scanner(System.in); // Created a static scanner to be shared across all instances of the class
 
-    public static void main(String[] args) {
+    {
 
-        char[][] gameBoard = {{'_', '|', '_', '|', '_'},        //Grid layout for the game
+        char[][] gameBoard = {{'_', '|', '_', '|', '_'},     //Grid layout for the game
                 {'_', '|', '_', '|', '_'},
                 {' ', '|', ' ', '|', ' '}};
-        printBoard(gameBoard);              // Print out the gridlayout
-        boolean gameOver = false;           // A boolean to make a true or false statement if game is over or if you want to do a rematch
+        printBoard(gameBoard);          // Print out the gridlayout
+        System.out.println("Welcome to a game of TicTacToe!");
+        System.out.println("May the best player win!");
+        boolean gameOver = false; // A boolean to make a true or false statement if game is over or if you want to do a rematch
         boolean playAgain = true;
 
-        while (playAgain) {             //while loop for play again or game over
+        while (playAgain) {     //while loop for play again or game over
             while (!gameOver) {
-                playerMove(gameBoard);
+                Player.playerMove(gameBoard);
                 gameOver = isGameOver(gameBoard);
                 if (gameOver) {
                     break;
                 }
-                player2Move(gameBoard);
+                Computer.Computer(gameBoard);
                 gameOver = isGameOver(gameBoard);
                 if (gameOver) {
                     break;
@@ -30,9 +31,9 @@ public class GameBoard {            // main class
             }
             System.out.println("Would you like to play again? Y/N");
             input.nextLine();
-            String result = input.nextLine();
+            String result = input.nextLine();                   // play again printout with switch cases
 
-            switch (result) {                    // play again printout with switch cases
+            switch (result) {
                 case "Y":
                 case "y":
 
@@ -54,7 +55,7 @@ public class GameBoard {            // main class
         }
     }
 
-    public static void printBoard(char[][] gameBoard) {          // Printboard method
+    public static void printBoard(char[][] gameBoard) {         // Printboard method
 
         for (char[] row : gameBoard) {
             for (char c : row) {
@@ -66,7 +67,7 @@ public class GameBoard {            // main class
         }
     }
 
-    public static void updateBoard(int position, int player, char[][] gameBoard) {      // Method for player positioning
+    public static void updateBoard(int position, int player, char[][] gameBoard) { // Method for player positioning
         char character;
 
         if (player == 1) {
@@ -116,28 +117,7 @@ public class GameBoard {            // main class
         }
 
     }
-
-    public static void playerMove(char[][] gameboard) {      //Method for player to move and positioning and if a move is invalid(If position is occupied)
-
-        System.out.println("Please make a move. (1-9)");
-
-
-        int move = input.nextInt();
-
-        boolean result = isValidMove(move, gameboard);
-        while (!result) {
-            System.out.println("Sorry! Invalid move. Try again");
-            move = input.nextInt();
-            result = isValidMove(move, gameboard);
-
-        }
-        System.out.println("Player 1 moved at position " + move);
-        updateBoard(move, 1, gameboard);
-
-
-    }
-
-    public static boolean isValidMove(int move, char[][] gameBoard) {            // switch case with if statements to see if a move to a position is valid
+    public static boolean isValidMove(int move, char[][] gameBoard) {       // switch case with if statements to see if a move to a position is valid
         switch (move) {
             case 1:
                 if (gameBoard[0][0] == '_') {
@@ -199,23 +179,7 @@ public class GameBoard {            // main class
         }
     }
 
-    public static void player2Move(char[][] gameBoard) {        // player 2 aka computer with random number generator for positioning and move
-
-        Random random = new Random();
-        int move = random.nextInt(9) + 1;
-
-        boolean result = isValidMove(move, gameBoard);
-
-        while (!result) {
-            move = random.nextInt(9) + 1;
-            result = isValidMove(move, gameBoard);
-        }
-        System.out.println("Player 2 moved at position " + move);
-        updateBoard(move, 2, gameBoard);
-
-    }
-
-    public static boolean isGameOver(char[][] gameBoard) {                             // method with if statements which prints out who won and if it's a tie
+    public static boolean isGameOver(char[][] gameBoard) {          // method with if statements which prints out who won and if it's a tie
         if (gameBoard[0][0] == 'X' && gameBoard[0][2] == 'X' && gameBoard[0][4] == 'X') {
             System.out.println("Player 1 wins!");
             return true;
@@ -294,7 +258,7 @@ public class GameBoard {            // main class
     }
 
 
-    public static void resetBoard(char[][] gameBoard){           // A reset method that clears out the game grid layout in case player would like to start a new game of TicTacToe
+    public static void resetBoard(char[][] gameBoard){      // A reset method that clears out the game grid layout in case player would like to start a new game of TicTacToe
         gameBoard[0][0] = '_';
         gameBoard[0][2] = '_';
         gameBoard[0][4] = '_';
@@ -307,6 +271,9 @@ public class GameBoard {            // main class
 
     }
 }
+
+
+
 
 
 
