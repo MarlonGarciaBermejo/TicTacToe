@@ -1,26 +1,21 @@
 public class Player {
+    public static void playerMove(char[][] gameboard) {     //Method for player1 (you) to move and positioning and if a move is invalid(If position is occupied)
 
-    private String player1;             //instance variable for player 1
-    private String player2;             //instance variable for player 2   
+        System.out.println("Please make a move. (1-9)");
 
-    public Player(String player1, String player2) {      //Constructor
-        this.player1 = player1;
-        this.player2 = player2;
-    }
 
-    public String getPlayer1() {        //Getters and setters for player 1 and 2
-        return player1;
-    }
+        int move = GameBoard.input.nextInt();
 
-    public void setPlayer1(String player1) {
-        this.player1 = player1;
-    }
+        boolean result = GameBoard.isValidMove(move, gameboard);
+        while (!result) {
+            System.out.println("Sorry! Invalid move. Try again");
+            move = GameBoard.input.nextInt();
+            result = GameBoard.isValidMove(move, gameboard);
 
-    public String getPlayer2() {
-        return player2;
-    }
+        }
+        System.out.println("Player 1 moved at position " + move);
+        GameBoard.updateBoard(move, 1, gameboard);
 
-    public void setPlayer2(String player2) {
-        this.player2 = player2;
+
     }
 }
