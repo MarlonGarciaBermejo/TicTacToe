@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class GameBoard {    // main class
+public class GameBoard {    
 
     static Scanner input = new Scanner(System.in); // Created a static scanner to be shared across all instances of the class
 
