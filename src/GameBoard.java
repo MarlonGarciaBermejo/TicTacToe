@@ -63,7 +63,7 @@ public class GameBoard {
         }
     }
 
-    public static void printBoard(char[][] gameBoard) {         // Printboard method
+    public static void printBoard(char[][] gameBoard) {         // Printboard method to print out rows
 
         for (char[] row : gameBoard) {
             for (char c : row) {
