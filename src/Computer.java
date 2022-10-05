@@ -1,7 +1,7 @@
 import java.util.Random;
 
 public class Computer {
-    public static void Computer(char[][] gameBoard) {        // player 2 aka computer with random number generator for positioning and move
+    public static void computerMove(char[][] gameBoard) {        // player 2 aka computer with random number generator for positioning and move
 
         Random random = new Random();
         int move = random.nextInt(9) + 1;
