@@ -1,12 +1,20 @@
 import java.util.Scanner;
 
 public class GameBoard {    
+ /*    _ | _ | _
+       _ | _ | _
+       _ | _ | _
 
+       positions in the grid
+       [0][0]=1  [0][1]=2 [0][2]=3
+       [1][0]=4  [1][2]=5 [1][4]=6
+       [2][0]=7  [2][2]=8 [2][4]=9
+     */
     static Scanner input = new Scanner(System.in); // Created a static scanner to be shared across all instances of the class
 
     {
 
-        char[][] gameBoard = {{'_', '|', '_', '|', '_'},     //Grid layout for the game
+        char[][] gameBoard = {{'_', '|', '_', '|', '_'},     //Char array grid layout for the game
                 {'_', '|', '_', '|', '_'},
                 {' ', '|', ' ', '|', ' '}};
         printBoard(gameBoard);          // Print out the gridlayout
