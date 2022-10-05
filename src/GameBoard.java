@@ -22,7 +22,7 @@ public class GameBoard {
                 if (gameOver) {
                     break;
                 }
-                Computer.Computer(gameBoard);
+                Computer.computerMove(gameBoard);
                 gameOver = isGameOver(gameBoard);
                 if (gameOver) {
                     break;
