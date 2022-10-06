@@ -15,8 +15,8 @@ public class GameBoard {
     {
 
         char[][] gameBoard = {{'_', '|', '_', '|', '_'},     //Char array grid layout for the game
-                {'_', '|', '_', '|', '_'},
-                {' ', '|', ' ', '|', ' '}};
+                              {'_', '|', '_', '|', '_'},
+                              {' ', '|', ' ', '|', ' '}};
         printBoard(gameBoard);          // Print out the gridlayout
         System.out.println("Welcome to a game of TicTacToe!");
         System.out.println("May the best player win!");
