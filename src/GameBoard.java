@@ -45,7 +45,6 @@ public class GameBoard {
 
             switch (result) {
                 case "Y":
-                case "y":
 
                     playAgain = true;
                     System.out.println("Nice! Let's play again");
@@ -54,8 +53,8 @@ public class GameBoard {
                     printBoard(gameBoard);
                     break;
 
-                case "N":
-                case "n":
+                case "N":   
+                    
                     System.out.println("Thank you for playing. Goodbye!");
                     break;
                 default:
