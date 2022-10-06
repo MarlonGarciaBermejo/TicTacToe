@@ -54,7 +54,7 @@ public class GameBoard {
                     break;
 
                 case "N":   
-                    
+                    playAgain = false;
                     System.out.println("Thank you for playing. Goodbye!");
                     break;
                 default:
