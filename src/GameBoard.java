@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class GameBoard {    
  /*    _ | _ | _
        _ | _ | _
-       _ | _ | _
+         |   | 
 
        positions in the grid
        [0][0]=1  [0][1]=2 [0][2]=3
